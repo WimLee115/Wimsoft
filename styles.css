@@ -70,17 +70,40 @@ h1, h2, h3 {
     background-color: #388e3c;
 }
 
-.services-grid {
+.services-grid, .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.service {
+.service, .project {
     background-color: #1f1f1f;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover, .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    color: #388e3c;
 }
 
 form {
@@ -116,7 +139,7 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
-    .services-grid {
+    .services-grid, .portfolio-grid {
         grid-template-columns: 1fr;
     }
 }
